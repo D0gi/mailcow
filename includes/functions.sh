@@ -180,7 +180,7 @@ EOF
 			echo "$(textb [INFO]) - Setting your hostname..."
 			if [[ -f /lib/systemd/systemd ]]; then
 				if [[ -z $(dpkg --get-selections | grep -E "^dbus.*install$") ]]; then
-					apt-get update -y > /dev/null 2>&1 && apt-get install dbus > /dev/null 2>&1
+					apt-get update -y > /dev/null 2>&1 && apt-get install -y dbus > /dev/null 2>&1
 				fi
 				hostnamectl set-hostname ${sys_hostname}
 			else
